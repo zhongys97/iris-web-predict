@@ -11,8 +11,8 @@ This app, based on Flask, predicts the flower species of the iris dataset.
 4. `sudo systemctl start docker` to start the Docker Daemon
 5. `sudo usermod -a -G docker ec2-user` to allow using Docker commands without the `sudo` keyword afterwards.
 6. In a separate terminal, copy the local repo to EC2 via `scp -i YOUR_KEY_PAIR_PEM_FILE -r iris-web-predict  ec2-user@YOUR_PUBLIC_DNS:/home/ec2-user` (Assuming the PEM file and the iris-web-predict directory are in the same directory). In the first terminal, confirm a new directory `iris-web-predict` is created.
-7. In the first terminal, cd into `iris-web-predict` and run `docker build -t iris-flask`.
-8. Set an an instance of the container: `docker run -p 80:80 iris-flask`
+7. In the first terminal, `cd iris-web-predict` and run `docker build -t iris-flask .` to build the image.
+8. Set up a container: `docker run -p 80:80 iris-flask`
 9. Identify the public IPv4 address of the EC2 instance, and open in browser.
 
 
